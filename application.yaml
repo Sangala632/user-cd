@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: catalogue
+  name: user
   namespace: argocd # Must be the namespace where Argo CD is installed
 spec:
   project: roboshop   # AppProject to which the application belongs
   source:
-    repoURL: https://github.com/Sangala632/catalogue-cd.git
+    repoURL: https://github.com/Sangala632/user-cd.git
     targetRevision: main
     path: .
     helm:
-      releaseName: catalogue
+      releaseName: user
       valueFiles:
       - values-dev.yaml
   destination:
